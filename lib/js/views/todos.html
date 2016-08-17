@@ -1,0 +1,151 @@
+
+<div class="grid-20 grid-parent">
+  <div class="margins rounded-box text-on-blue">
+   <button ng-click="save()">Save</button>
+    <div class="sidebar-heading sidebar-heading-skin dark-blue-bg">Your Todos</div>
+        <ul>
+            <li ng-repeat="todo in todos"
+            >
+            {{todo.title}}
+            </li>
+        </ul>    
+    <div ng-controller="TodoListCtrl">
+      <a ng-repeat="todo in getTodos()"
+        ng-click="select(todo)"
+        class="sidebar-item-borders sidebar-item dark-blue-bg"
+        ng-class="getCssClass(todo)"
+      >
+        <span ng-bind="todo.title"></span>
+      </a>
+    </div>
+
+    <div ng-controller="EditTodoCtrl" class="grid-80 grid-parent">
+      <form novalidate role="form">
+
+        <div class="margins padding rounded-box dark-blue-bg text-on-blue">
+          <div ng-show="!editMode">
+            <span ng-bind="todo.title" class="current-item"/>
+          </div>
+          <div ng-show="editMode">
+            <input
+              type="text"
+              ng-model="todo.title"
+              class="current-item current-item-edit"
+            />
+          </div>
+        </div>
+
+        <div class="margins padding rounded-box medium-blue-bg text-on-blue">
+          <span>Due:</span>
+            {{ todo.due | date : 'short' }}
+        </div>
+
+        <div
+          ng-show="!editMode"
+          class="margins padding rounded-box todo-text"
+        >
+          <span ng-bind="todo.text"></span>
+        </div>
+        <div
+          ng-show="editMode"
+        >
+          <textarea ng-model="todo.text" class="margins padding todo-text todo-text-edit"></textarea>
+        </div>
+
+        <div ng-show="!editMode">
+          <span class="span-save">
+            <button ng-click="edit()" class="btn">Edit</button>
+            <button ng-click="create()" class="btn">New</button>
+            <button ng-click="remove()" class="btn">Delete</button>
+          </span>
+        </div>
+        <div ng-show="editMode">
+          <span class="span-save">
+              <md-button md-no-ink class="md-primary">Save</md-button>
+              <md-button ng-disabled="true" class="md-primary">Disabled</md-button>
+              <md-button class="md-warn">{{todo.title}}</md-button>
+            </span>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-raised">Button</md-button>
+      <md-button class="md-raised md-primary">Primary</md-button>
+      <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+      <md-button class="md-raised md-warn">Warn</md-button>
+      <div class="label">Raised</div>
+</section>
+ <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button class="md-fab" aria-label="Eat cake">
+            
+            <md-icon md-font-set="material-icons">cake</md-icon>
+        </md-button>
+        <md-button class="md-fab md-primary" aria-label="Use Android">
+          
+
+
+
+        </md-button>
+        <md-button class="md-fab" ng-disabled="true" aria-label="Comment">
+            
+            <md-icon md-font-set="material-icons">ic_comment</md-icon>
+        </md-button>
+        <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
+            <md-icon md-font-set="material-icons">comment</md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Eat cake">
+            <md-icon md-font-set="material-icons">cake</md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini md-primary" aria-label="Use Android">
+          <md-icon md-font-set="material-icons">android</md-icon>
+        </md-button>
+      <div class="label">FAB</div>
+    </section>
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button ng-href="{{googleUrl}}" target="_blank">Default Link</md-button>
+        <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">Primary Link</md-button>
+        <md-button>Default Button</md-button>
+      <div class="label">Link vs. Button</div>
+    </section>
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-primary md-hue-1">Primary Hue 1</md-button>
+      <md-button class="md-warn md-raised md-hue-2">Warn Hue 2</md-button>
+      <md-button class="md-accent">Accent</md-button>
+      <md-button class="md-accent md-raised md-hue-1">Accent Hue 1</md-button>
+      <div class="label">Themed</div>
+    </section>
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-icon-button md-primary" aria-label="Settings">
+        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button md-accent" aria-label="Favorite">
+        <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="More">
+        <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+      </md-button>
+      <md-button href="http://google.com"
+                 title="Launch Google.com in new window"
+                 target="_blank"
+                 ng-disabled="true"
+                 aria-label="Google.com"
+                 class="md-icon-button launch" >
+        <md-icon md-svg-icon="img/icons/launch.svg"></md-icon>
+      </md-button>
+      <div class="label">Icon Button</div>
+    </section>
+  
+
+
+<md-list >
+  <md-subheader class="md-no-sticky">Gospels</md-subheader>
+  <md-list-item ng-repeat="gospel in gospels">
+    <md-checkbox></md-checkbox>
+    <p>{{gospel.verse}}</p>
+    <p>{{gospel.gospel}}</p>
+    <md-icon class="md-secondary"  aria-label="Chat" md-svg-icon="communication:message"></md-icon>
+  </md-list-item>
+</md-list>

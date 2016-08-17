@@ -1,0 +1,49 @@
+{
+  "name": "AppleBit",
+  "version": "1.0.0",
+  "description": "Applebit demo",
+  "main": "api_runner.js",
+  "start":"node lib/api/server.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "chance": "^1.0.3",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jquery": "^2.2.3"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.0-rc.5",
+    "angular-material-icons": "^0.7.1",
+    "angular-messages": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "async": "^2.0.0-rc.4",
+    "body-parser": "^1.15.1",
+    "compression": "^1.6.1",
+    "debug": "^2.2.0",
+    "event-emitter": "^0.3.4",
+    "express": "^4.13.4",
+    "font-awesome": "^4.6.3",
+    "ip": "^1.1.3",
+    "kd.tree": "^0.1.3",
+    "lodash": "^4.12.0",
+    "moment": "^2.13.0",
+    "mysql": "^2.10.2",
+    "node-watch": "^0.3.5",
+    "ping": "^0.1.10",
+    "serve-static": "^1.10.2",
+    "superagent": "^1.8.3",
+    "tcp-ping": "^0.1.1"
+  }
+}

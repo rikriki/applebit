@@ -1,0 +1,27 @@
+<div layout="column" ng-cloak class="md-inline-form">
+  <md-content layout-padding>
+    <div>
+      <form name="userForm">
+        <div layout-gt-xs="row">
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>Gospel</label>
+            <input ng-model="gospel.verse">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>verse</label>
+            <input ng-model="gospel.gospel">
+          </md-input-container>
+          <input type="file" ng-model="gospel.image" accept="image/*" file-reader />
+
+          <md-datepicker ng-model="gospel.reg_date" md-placeholder="Enter date">
+          </md-datepicker>
+        </div>
+        <md-button ng-click="save()" class="md-fab md-primary md-hue-2" aria-label="Profile">
+            <md-icon md-font-set="material-icons">comment</md-icon>
+        </md-button>
+        
+      </form>
+    </div>
+  </md-content>
+</div>

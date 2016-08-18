@@ -17,9 +17,12 @@ module.exports = function(grunt) {
 	      }
 	    },
 		watch: {
+			options: {
+		        livereload: true
+		      },
 			css: {
 				//files: ['lib/client/templates/**/*.hbs','lib/client/css/**/*.less', 'lib/client/js/**/*.js','lib/shared/**/*.js','!lib/client/js/dist.js','!lib/client/js/css_vars.js'],
-				files: ['lib/js/**/*.js','lib/js/**/*.html','lib/*.html','lib/js/templates/*.hbs','lib/js/*.js','!lib/js/dist.js','!lib/js/css_vars.js'],
+				files: ['index.html','lib/js/**/*.js','lib/js/**/*.html','lib/*.html','lib/js/templates/*.hbs','lib/js/*.js','!lib/js/dist.js','!lib/js/css_vars.js'],
 				tasks: ['build'],
 			},
 		},
@@ -58,6 +61,6 @@ module.exports = function(grunt) {
 	});
 	//grunt.registerTask('default', ['less:main','less:diagram', 'less2js','browserify']);
 	grunt.registerTask('build', ['sass:dist','browserify']);
-	grunt.registerTask('sync', ['connect','build', 'watch']);
+	grunt.registerTask('sync', ['build','connect', 'watch']);
 
 }

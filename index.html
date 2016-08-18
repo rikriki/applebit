@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="content grid-container" ng-app="todoApp">
-				<div ng-view></div>
+				
 			
     <md-toolbar class="md-hue-2" ng-controller="HomeCtrl">
       <div class="md-toolbar-tools">
@@ -19,7 +19,7 @@
           <md-icon md-font-set="material-icons" ng-click="toggleLeft()">menu</md-icon>
         </md-button>
         <h2>
-          <span>Toolbar with Disabled/Enabled Icon Buttons</span>
+          <span>Applebit 1.0</span>
         </h2>
         <span flex></span>
         <md-button class="md-icon-button" aria-label="Favorite">
@@ -32,16 +32,17 @@
     </md-toolbar>
   
 
-	<section layout="row" flex="">
+	<section layout="row" flex="" >
 	    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
 
 	      <md-toolbar class="md-theme-indigo">
 	        <h1 class="md-toolbar-tools">Sidenav Left</h1>
 	      </md-toolbar>
-	      <md-content layout-padding="" >
-	        <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+	      <md-content layout-padding="" ng-controller="SideNavLeftCtrl" >
+	        <md-button ng-click="close()" class="md-primary">
 	          Close Sidenav Left
 	        </md-button>
+
 	        <p hide="" show-gt-md="">
 	          This sidenav is locked open on your device. To go back to the default behavior,
 	          narrow your display.
@@ -53,7 +54,7 @@
 
 	      <div layout="column" layout-align="top center">
 	        <h1>Riki Rosales</h1>
-	        
+	        <div ng-view></div>
 	      </div>
 	      <div flex=""></div>
 	    </md-content>

@@ -9,7 +9,13 @@ module.exports = function(grunt) {
 	var _ = require('lodash');
 	
 	grunt.initConfig({
-
+		connect: {
+	      server: {
+	        options: {
+	          port: 9001
+	        }
+	      }
+	    },
 		watch: {
 			css: {
 				//files: ['lib/client/templates/**/*.hbs','lib/client/css/**/*.less', 'lib/client/js/**/*.js','lib/shared/**/*.js','!lib/client/js/dist.js','!lib/client/js/css_vars.js'],
@@ -45,9 +51,6 @@ module.exports = function(grunt) {
 			     },
 				files: {
 					'lib/js/dist.js': ['lib/js/**/*.js', '!lib/js/dist.js']
-				},
-				options: {
-					transform: ['hbsfy'],
 				}
 			}
 		}
@@ -55,6 +58,6 @@ module.exports = function(grunt) {
 	});
 	//grunt.registerTask('default', ['less:main','less:diagram', 'less2js','browserify']);
 	grunt.registerTask('build', ['sass:dist','browserify']);
-	grunt.registerTask('sync', ['build', 'watch']);
+	grunt.registerTask('sync', ['connect','build', 'watch']);
 
 }

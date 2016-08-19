@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 		      },
 			css: {
 				//files: ['lib/client/templates/**/*.hbs','lib/client/css/**/*.less', 'lib/client/js/**/*.js','lib/shared/**/*.js','!lib/client/js/dist.js','!lib/client/js/css_vars.js'],
-				files: ['index.html','lib/js/**/*.js','lib/js/**/*.html','lib/*.html','lib/js/templates/*.hbs','lib/js/*.js','!lib/js/dist.js','!lib/js/css_vars.js'],
+				files: ['lib/js/**/*.js','lib/js/**/*.html','lib/*.html','lib/js/templates/*.hbs','lib/js/*.js','!lib/js/dist.js','!lib/js/css_vars.js'],
 				tasks: ['build'],
 			},
 		},

@@ -4,20 +4,20 @@
       <form name="userForm">
         <div >
           <md-input-container class="md-block" >
-            <label>Gospel</label>
-            <input ng-model="gospel.verse">
+            <label>Title</label>
+            <input ng-model="model.title">
           </md-input-container>
 
           <md-input-container class="md-block" >
-            <label>verse</label>
-            <input ng-model="gospel.gospel">
+            <label>Role</label>
+            <input ng-model="model.role">
           </md-input-container>
 
           <md-input-container class="md-block" >
-            <input type="file" ng-model="gospel.image" accept="image/*" file-reader />
-          <md-input-container class="md-block" >
-          <md-datepicker ng-model="gospel.reg_date" md-placeholder="Enter date">
-            </md-datepicker>
+            <input type="file" ng-model="model.image" accept="image/*" file-reader />
+          </md-input-container class="md-block" >
+          <md-datepicker ng-model="model.reg_date" class="md-block" md-placeholder="Enter date">
+          </md-datepicker>
         </div>
         
         <md-button class="md-raised md-primary" ng-click="save()">Save</md-button>

@@ -1,14 +1,28 @@
-<div layout-gt-sm="row"  layout-wrap ng-cloak class="">
-  <md-content layout-padding>
-    <div>
-     Home
-    </div>
+
+<div layout-wrap ng-cloak class="">
+  <md-content layout-padding layout="column">
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Your profile</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <h1>{{profile.basics.name}}</h1>
+          <div class="basic_info" ng-repeat="item in basicInfo">
+          
+              <div class="inset">
+                  <md-icon md-font-set="material-icons">{{item.icon}}</md-icon>
+                  {{item.val}}
+              </div>
+          </div>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button>Edit your profile</md-button>
+        </md-card-actions>
+    </md-card>
   </md-content>
 </div>
-
-
-
-
 <div layout="column" ng-cloak class="ng-hide">
   <md-content layout-padding>
     <form name="projectForm">

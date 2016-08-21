@@ -10,7 +10,7 @@
 </script>
 </head>
 <body>
-<div class="content grid-container" ng-app="todoApp">
+<div class="content grid-container" ng-app="todoApp" >
 				
 			
     <md-toolbar class="md-hue-2" ng-controller="AppCtrl">
@@ -32,31 +32,33 @@
     </md-toolbar>
   
 
-	<section layout="row" flex="" >
-	    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+	<section layout="row" flex="" ng-controller="SideNavLeftCtrl">
+		<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
 
-	      <md-toolbar class="md-theme-indigo">
+		  <md-toolbar class="md-theme-indigo">
 	        <h1 class="md-toolbar-tools">Sidenav Left</h1>
 	      </md-toolbar>
-	      <md-content layout-padding="" ng-controller="SideNavLeftCtrl" >
-	        <md-button ng-click="close()" class="md-primary">
-	          Close Sidenav Left
-	        </md-button>
-	        <md-input-container class="md-block" >
-	        	<a ng-click="changeNav('')">home</a>
-	        </md-input-container>
-	        <md-input-container class="md-block" >
-	        	<a ng-click="changeNav('create')">creat2e</a>
-	        </md-input-container>
-	        <md-input-container class="md-block" >
-	        	<a ng-click="changeNav('gospels')">gospels</a>
-	        </md-input-container>	
-	        <p hide="" show-gt-md="">
+
+	      <p hide="" show-gt-md="">
 	          This sidenav is locked open on your device. To go back to the default behavior,
 	          narrow your display.
-	        </p>
-	      </md-content>
+	      </p>
+	      <div ng-repeat="item in menu" >
+
+			<div ng-click="changeNav(item.title)">
+			    <div class="inset">
+			        <md-icon md-font-set="material-icons" ng-click="toggleLeft()">{{item.icon}}</md-icon> {{item.title}}
+			    </div>
+			</div>
+		  </div>    
 	    </md-sidenav>
+
+
+
+
+
+
+
 
 	    <md-content flex="" layout-padding="">
 

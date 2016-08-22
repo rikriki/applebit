@@ -1,28 +1,58 @@
-
-<div layout-wrap ng-cloak class="">
-  <md-content layout-padding layout="column">
-    <md-card>
+<div layout-wrap ng-cloak>
+  <md-content layout="row">
+    <md-card flex="50" >
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">Your profile</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
-          <h1>{{profile.basics.name}}</h1>
-          <div class="basic_info" ng-repeat="item in basicInfo">
-          
-              <div class="inset">
-                  <md-icon md-font-set="material-icons">{{item.icon}}</md-icon>
-                  {{item.val}}
-              </div>
-          </div>
+            <h1>{{profile.basics.name}}</h1>
+            <div class="basic_info" ng-repeat="item in basicInfo">
+                <div class="inset">
+                    <md-icon md-font-set="material-icons">{{item.icon}}</md-icon>
+                    {{item.val}}
+                </div>
+            </div>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
             <md-button>Edit your profile</md-button>
         </md-card-actions>
     </md-card>
+    <md-card flex="50">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Your profile</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <h1>{{profile.basics.name}}</h1>
+            <div class="basic_info" ng-repeat="item in basicInfo">
+                <div class="inset">
+                    <md-icon md-font-set="material-icons">{{item.icon}}</md-icon>
+                    {{item.val}}
+                </div>
+            </div>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button>Edit your profile</md-button>
+        </md-card-actions>
+    </md-card>
+  </md-content>  
+</div>
+<div layout-wrap ng-cloak>
+  <md-content layout-padding>
+      <div layout="row">
+          <div flex>First item in row</div>
+          <div flex="20">Second item in row</div>
+      </div>
+      <div layout="column">
+          <div flex="66">First item in column</div>
+          <div flex="33">Second item in column</div>
+      </div>
   </md-content>
 </div>
+
 <div layout="column" ng-cloak class="ng-hide">
   <md-content layout-padding>
     <form name="projectForm">
